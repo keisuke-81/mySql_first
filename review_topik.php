@@ -58,9 +58,9 @@ if($status == false){
 // header('Content-type: ' . $contents_type[$img['type']]);
 //     echo $['image'];
 
-$name ="name";
-echo $name."<br>";
-?>
+// $name ="name";
+// echo $name."<br>";
+// ?>
 
 
 <!DOCTYPE html>
@@ -69,40 +69,69 @@ echo $name."<br>";
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
-    <fieldset>
-        <div><?=$row["shop_name"]?></div>
-        <div>投稿者：<?=$row["reviewer_name"]?></div>
-        <div><?=$row["word"]?></div>
-        <div><?=$row["tel"]?></div>
-        <div><?=$row["url"]?></div>
-        <div><?=$row["address"]?></div>
-    </fieldset>
-    <form action="update.php" method="POST">
-    <fieldset>
-      <legend>あなたの口コミ募集中！</legend>
-      <div>
-        <label for="name">店舗ナンバー</label>
-        <input id="name" type="text" name="id" value="<?=$id?>" readonly>
-      </div>
-      <div>
-        name: <input type="name" name="name">
-      </div>
-      <div>
-           <textarea name="text" id="" cols="40" rows="5"></textarea>
-      </div>
-      <div>
-         <label for="name">入力日:</label>
-        <input id="" type="text" name="day" value="<?=$day?>" readonly>
-      </div>
-      <div>
-        <a href='update.php?id="<?=$id?>"'><button>入力する</button></a>
-      </div>
-    </fieldset>
-  </form>
-  <img src="<?=$row['img']?>">
+    <div class="row top_h">
+    <h1 class="col-5 display-1">foods-LINKS</h1>
+    <ul class="col-5 nav justify-content-end">
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" href="#">Active</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Link</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Link</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+    </li>
+    </ul>
+  </div>
+    <div class="wrapper2">
+        <div class="container">
+            <div class="row  justify-content-center">
+                <div class="col-6 white_back font2"> 
+                    <div class="margin_b">
+                        <h1><?=$row["shop_name"]?></h1>
+                        <div>投稿者：<?=$row["reviewer_name"]?></div>
+                        <div><?=$row["word"]?></div>
+                        <div><?=$row["tel"]?></div>
+                        <div><?=$row["url"]?></div>
+                        <div><?=$row["address"]?></div>
+                    </div>
+                    <form action="update.php" method="POST">
+                    <fieldset>
+                      <legend>あなたの口コミ募集中！</legend>
+                      <div class="disno">
+                        <label for="name">店舗ナンバー</label>
+                        <input id="name" type="text" name="id" value="<?=$id?>" readonly>
+                      </div>
+                      <div>
+                        name: <input type="name" name="name">
+                      </div>
+                      <div>
+                           <textarea name="text" id="" cols="40" rows="5"></textarea>
+                      </div>
+                      <div>
+                         <label for="name">入力日:</label>
+                        <input id="" type="text" name="day" value="<?=$day?>" readonly>
+                      </div>
+                      <div>
+                        <a href='update.php?id="<?=$id?>"'><button>入力する</button></a>
+                      </div>
+                    </fieldset>
+                      </form>
+                      <img src="<?=$row['img']?>">
+                </div>
+                <div class="col-6"></div>
+            </div>
+        </div>
+    </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>
 

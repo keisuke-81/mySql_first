@@ -41,16 +41,18 @@ $output = "";
 foreach ($result as $record) {  //HTMLの生成
   $output .= "
   
-    <tr> 
+    <thead>
+    <div class='row justify-content-center'>
       
-      <td>{$record['reviewer_name']}</td>
-      <td>{$record['shop_name']}</td>
-      <td>{$record['genre']}</td>
-      <td>{$record['address']}</td>
-      <td>{$record['word']}</td>
-      <td><a href='review_topik.php?id=".$record['shops_id']."'>詳細へ</a></td>
+      <div class=col-2>{$record['reviewer_name']}</div>
+      <div class=col-2>{$record['shop_name']}</div>
+      <div class=col-2>{$record['genre']}</div>
+      <div class=col-2>{$record['address']}</div>
+      <div class=col-2>{$record['word']}</div>
+      <div class=col-2><a href='review_topik.php?id=".$record['shops_id']."'>詳細へ</a></div>
       
-    </tr>
+    </div>
+    </thead>
   ";
 }
 
@@ -78,32 +80,86 @@ foreach ($result as $record) {  //HTMLの生成
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
   <title>おすすめのお店を教えてください</title>
 </head>
 
 <body>
-  <fieldset>
-    <legend>おすすめ和食のお店一覧</legend>
-    <a href="review_input.php">入力画面</a>
-    <table>
-      <thead>
-        <tr>
-          <th>投稿者の名前</th>
-          <th>お店の名前</th>
-          <th>お店のジャンル</th>
-          <th>お店の住所</th>
-          <th>お店の情報</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- ここに<tr><td>deadline</td><td>todo</td><tr>の形でデータが入る -->
-          <?= $output ?>
-      </tbody>
-    </table>
-  </fieldset>
+  <div class="row top_h">
+    <h1 class="col-5 display-1">foods-LINKS-wasyoku</h1>
+    <ul class="col-5 nav justify-content-end">
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" href="#">Active</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Link</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Link</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+    </li>
+    </ul>
+  </div>
+  <div class="wrapper2">
+    <div class="container">
+    <!-- Content here -->
+    <div class=photo_size>
+      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="img/j1.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="img/j2.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="img/j3.jpg" class="d-block w-100" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+      </div>
+    </div>
+      <div class="white_back">
+        <legend>おすすめ和食のお店一覧</legend>
+        <a href="review_input.php">入力画面</a>
+        <table>
+          <thead>
+            <div class="row justify-content-center">
+              <div class="col-2">投稿者の名前</div>
+              <div class="col-2">お店の名前</div>
+              <div class="col-2">お店のジャンル</div>
+              <div class="col-2">お店の住所</div>
+              <div class="col-2">お店の情報</div>
+              <div class="col-2">詳細情報</div>
+            </div>
+          </thead>
+          <tbody>
+            <!-- ここに<tr><td>deadline</td><td>todo</td><tr>の形でデータが入る -->
+              <?= $output ?>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   <script>
-    const data = <?= json_encode($result)?>;
-    console.log(data);
+    // const data = <?= json_encode($result)?>;
+    // console.log(data);
 
   </script>
 </body>

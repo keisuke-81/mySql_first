@@ -1,0 +1,56 @@
+/* body{
+    justify-content-center
+} */
+.top_img{
+    width: 300px;
+margin-top: 20px;
+}
+.top_h{
+    height: 120px;
+    font-size: 3rem;
+    background:rgb(66, 58, 58);
+    color:moccasin ;
+    font-weight: bold;
+}
+h1{
+margin-left: 10%;
+
+}
+.black{
+    background-color: moccasin;
+}
+.wrapper{
+    background: url(img/paty.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
+    
+}
+.wrapper2{
+    background: url(img/fire.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    
+}
+.photo_size{
+    height: 500px;
+    width: 50%;
+    margin: 0 auto;
+}
+.white_back{
+    background-color: moccasin ;
+    color:rgb(66, 58, 58) ;
+}
+.font2{
+    font-size: 1.5rem;
+}
+
+.margin_b{
+    margin-bottom: 25%;
+}
+
+.disno{
+    display: none;
+}
+
